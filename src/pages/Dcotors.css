@@ -1,0 +1,34 @@
+.doctor-container{
+    width: 90vw;
+    /* background-color: #4d4d4d; */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.doctors-dept{
+    margin: 10px;
+    width: 350px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.doctors-dept:hover{
+    transform: scale(1.03);
+    border-bottom: 5px solid rgb(0, 26, 95);
+    border-top: 5px solid rgb(0, 26, 95);
+}
+.dept-name{
+    font-weight: bold;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgb(48, 102, 250);
+    margin-bottom: 10px;
+}

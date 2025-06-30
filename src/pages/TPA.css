@@ -1,0 +1,33 @@
+.tpa-section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+.tpa-container{
+    width: 95vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.tpa-item{
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     transition: transform 0.3s ease;
+}
+.tpa-item:hover{
+    transform: scale(1.03);
+}
+.tpa-img img{
+    border-bottom: 2px solid blue;
+}
+.tpa-name{
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+}
