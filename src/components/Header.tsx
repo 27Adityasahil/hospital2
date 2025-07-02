@@ -121,7 +121,7 @@ const Header: React.FC<HeaderProps> = ({ onBookAppointment }) => {
             <span className="cursor-pointer hover:text-blue-300">Contact</span>
             <span className="cursor-pointer hover:text-blue-300">Career</span>
             <span className="cursor-pointer hover:text-blue-300">Blog</span>
-            <Link to="gallery"> <span className="cursor-pointer hover:text-blue-300">Gallery</span></Link>
+            <Link to="/gallery"> <span className="cursor-pointer hover:text-blue-300">Gallery</span></Link>
             <div className="flex space-x-2">
               <a
                 href="https://www.facebook.com/profile.php?id=100005962939497"
