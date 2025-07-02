@@ -44,7 +44,7 @@ const AboutSection = () => {
                 PVT LTD
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                For over 25 years, we have been dedicated to providing exceptional healthcare services to our community. Our state-of-the-art facility combines advanced medical technology with compassionate care to ensure the best possible outcomes for our patients.
+                For over 15 years, we have been dedicated to providing exceptional healthcare services to our community. Our state-of-the-art facility combines advanced medical technology with compassionate care to ensure the best possible outcomes for our patients.
               </p>
               <p className="text-lg text-gray-600 mb-8">
                 We believe in a holistic approach to healthcare, focusing not just on treating illness but on promoting overall wellness and preventive care. Our team of experienced medical professionals is committed to delivering personalized care that meets each patient's unique needs.
