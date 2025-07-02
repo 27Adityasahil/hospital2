@@ -11,6 +11,7 @@ import Doctors from './pages/Doctors.tsx';
 import AmbulanceService from './pages/Facilities/AmbulanceService.tsx';
 import TPA from './pages/TPA.tsx';
 import Preloader from './components/Preloader.tsx';
+import Gallery from './pages/GAllery.tsx';
 const router = createBrowserRouter([
   {
     path:"/",
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path:"TPA",
         element: <TPA />
+      },
+      {
+        path:"gallery",
+        element: <Gallery />
       },
     ]
   }

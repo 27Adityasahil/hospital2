@@ -13,6 +13,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import nabh from "../assets/nabh.png";
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 interface HeaderProps {
   onBookAppointment: () => void;
@@ -120,7 +121,7 @@ const Header: React.FC<HeaderProps> = ({ onBookAppointment }) => {
             <span className="cursor-pointer hover:text-blue-300">Contact</span>
             <span className="cursor-pointer hover:text-blue-300">Career</span>
             <span className="cursor-pointer hover:text-blue-300">Blog</span>
-            <span className="cursor-pointer hover:text-blue-300">Gallery</span>
+            <Link to="/gallery"> <span className="cursor-pointer hover:text-blue-300">Gallery</span></Link>
             <div className="flex space-x-2">
               <a
                 href="https://www.facebook.com/profile.php?id=100005962939497"
