@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Heart, Shield, Star } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
+import bannerimg from '../assets/slider2.jpg'
 
 interface HeroProps {
   onBookAppointment: () => void;
@@ -14,8 +15,12 @@ const Hero: React.FC<HeroProps> = ({ onBookAppointment }) => {
     navigate("services");
   };
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-blue-50 pt-40 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center flex-col bg-gradient-to-br from-blue-50 via-white to-blue-50 pt-40 overflow-hidden">
+      <div className="hospital-banner w-full object-fill">
+          <img src={bannerimg} alt="" />
+        </div>
       <div className="container mx-auto px-4 max-w-7xl">
+        
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
