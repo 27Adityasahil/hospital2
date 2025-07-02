@@ -1,3 +1,257 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* @import 'bootstrap/dist/css/bootstrap.min.css'; */
+
+:root {
+  --primary-color: #1e40af;
+  --secondary-color: #0891b2;
+  --accent-color: #dc2626;
+  --success-color: #059669;
+  --warning-color: #d97706;
+  --dark-color: #1f2937;
+  --light-color: #f8fafc;
+  --gradient-primary: linear-gradient(135deg, #1e40af 0%, #0891b2 100%);
+  --gradient-secondary: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+  --font-primary: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+}
+
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.preloader-content {
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.preloader-logo {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.preloader-text {
+  margin: 2rem 0;
+}
+
+.typing-cursor {
+  color: var(--primary-color);
+  font-weight: 300;
+  animation: blink 1s infinite;
+}
+
+.typing-cursor.visible {
+  opacity: 1;
+}
+
+.typing-cursor.invisible {
+  opacity: 0;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.preloader-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Floating Action Buttons */
+.floating-buttons {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.floating-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  animation: floatingBtn 3s ease-in-out infinite;
+}
+
+.floating-btn-1 {
+  animation-delay: 0s;
+}
+
+.floating-btn-2 {
+  animation-delay: 0.5s;
+}
+
+.floating-btn-3 {
+  animation-delay: 1s;
+}
+
+@keyframes floatingBtn {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating-btn-text {
+  position: absolute;
+  right: 70px;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  color: #333;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.floating-btn-text::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid white;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+.floating-btn:hover .floating-btn-text {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-10px);
+}
+
+.floating-btn button {
+  transition: all 0.3s ease;
+  border: none;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-btn button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* Mobile responsiveness for floating buttons */
+@media (max-width: 768px) {
+  .floating-buttons {
+    right: 15px;
+    gap: 15px;
+  }
+  
+  .floating-btn button {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .floating-btn-text {
+    right: 60px;
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  
+  .floating-btn-text::after {
+    right: -6px;
+    border-left-width: 6px;
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+  }
+  
+  .preloader-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .preloader-text h1 {
+    font-size: 2rem;
+  }
+  
+  .preloader-logo .bg-danger,
+  .preloader-logo .bg-primary {
+    padding: 2rem;
+  }
+  
+  .preloader-logo .bg-danger svg,
+  .preloader-logo .bg-primary svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 991px) {
+  .mega-menu {
+    position: static !important;
+    width: 100% !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .display-3, .display-4 {
+    font-size: 2rem;
+  }
+  
+  .lead {
+    font-size: 1.1rem;
+  }
+}
+.logoImg{
+  width: 150px;
+}

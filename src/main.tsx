@@ -1,6 +1,6 @@
-import { StrictMode } from 'react';
+import { Suspense, StrictMode } from 'react';
+import { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App.tsx';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './Layout.tsx';
@@ -10,6 +10,7 @@ import About from './pages/About.tsx';
 import Doctors from './pages/Doctors.tsx';
 import AmbulanceService from './pages/Facilities/AmbulanceService.tsx';
 import TPA from './pages/TPA.tsx';
+import Preloader from './components/Preloader.tsx';
 const router = createBrowserRouter([
   {
     path:"/",
@@ -43,8 +44,34 @@ const router = createBrowserRouter([
   }
 ])
 
+// createRoot(document.getElementById('root')!).render(
+//   <StrictMode>
+//     <Suspense fallback={<Preloader />}>
+//       <RouterProvider router={router} />
+//     </Suspense>
+//   </StrictMode>
+// );
+
+function AppWithPreloader() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const minLoadTime = 5000; // 2 seconds
+    const timer = setTimeout(() => setLoading(false), minLoadTime);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Preloader />;
+
+  return (
+    <Suspense fallback={<Preloader />}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AppWithPreloader />
   </StrictMode>
 );
