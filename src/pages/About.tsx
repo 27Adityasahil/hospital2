@@ -3,6 +3,8 @@ import CommonBanner from '../components/CommonBanner'
 import aboutImg from '../assets/images1/about-img.png'
 
 import './About.css'
+import { ChevronRight } from 'lucide-react'
+import CentersOfExcellence from '../components/CentersOfExcellence'
 
 function About() {
   return (
@@ -25,15 +27,18 @@ function About() {
 
           <div className="points">
             <ul>
-              <li> 24/7 hours support</li>
-              <li>Emergency Service</li>
+              <li><ChevronRight /> 24/7 hours support</li>
+              <li><ChevronRight /> Emergency Service</li>
             </ul>
             <ul>
-              <li>99% satisfaction</li>
-              <li>Patient Centered Care</li>
+              <li><ChevronRight /> 99% satisfaction</li>
+              <li><ChevronRight /> Patient Centered Care</li>
             </ul>
           </div>
         </div>
+      </div>
+      <div className="slider-section">
+        <CentersOfExcellence />
       </div>
 
     </section>
