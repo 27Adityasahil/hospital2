@@ -1,0 +1,34 @@
+.about-section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.left-about{
+    width: 30vw;
+}
+.right-about{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: poppins, sans-serif;
+    padding-right: 20px;
+}
+.right-about h4{
+    font-size: 30px;
+    font-weight: bold;    
+}
+.right-about p{
+    font-size: 1.1rem;
+    text-align: justify;
+}
+.points{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.points ul{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
