@@ -10,7 +10,8 @@ import {
   Twitter, 
   Instagram, 
   Linkedin,
-  Heart
+  Heart,
+  MessageCircle
 } from 'lucide-react';
 
 const Footer = () => {
@@ -29,6 +30,8 @@ const Footer = () => {
     'Contact Us',
     'Career'
   ];
+
+  
 
   return (
     <footer className="bg-gray-900 text-white overflow-hidden">
@@ -58,17 +61,44 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200 cursor-pointer">
-                <Facebook className="w-5 h-5" />
+                <a
+                href="https://www.facebook.com/profile.php?id=100005962939497"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Facebook
+                  size={16}
+                  className="cursor-pointer hover:text-blue-300"
+                />
+              </a>
               </div>
               <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200 cursor-pointer">
-                <Twitter className="w-5 h-5" />
+                <a
+                href="https://wa.me/917070931814"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <MessageCircle
+                  size={16}
+                  className="cursor-pointer hover:text-blue-300"
+                />
+              </a>
               </div>
               <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200 cursor-pointer">
-                <Instagram className="w-5 h-5" />
+                <a
+                href="https://www.instagram.com/dr.bimalhospital/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Instagram
+                  size={16}
+                  className="cursor-pointer hover:text-blue-300"
+                />
+              </a>
               </div>
-              <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200 cursor-pointer">
+              {/* <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200 cursor-pointer">
                 <Linkedin className="w-5 h-5" />
-              </div>
+              </div> */}
             </div>
           </motion.div>
 
