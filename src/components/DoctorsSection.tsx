@@ -14,6 +14,10 @@ import drBrajesh from '../assets/doctors/drBrajesh.jpg'
 import drMani from '../assets/doctors/drMani.jpeg'
 import drSurendra from '../assets/doctors/drSurendra.jpg'
 import drBhoomika from '../assets/doctors/drBhoomika.jpg'
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import './test.css'
 
 
 interface DoctorsSectionProps {
@@ -100,6 +104,29 @@ const DoctorsSection: React.FC<DoctorsSectionProps> = ({ onBookAppointment }) =>
     }
   };
 
+  const sliderSettings = {
+    centerMode: true,
+    centerPadding: "0px",
+    slidesToShow: 3,
+    infinite: true,
+    speed: 500,
+    focusOnSelect: true,
+    arrows: true,
+    dots: true,
+    autoplay: true,       // <-- add this
+  autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 640,
+        settings: { slidesToShow: 1 },
+      },
+    ],
+  };
+
   return (
     <section id="doctors" className="py-20 bg-white overflow-hidden" ref={ref}>
       <div className="container mx-auto px-4 max-w-7xl">
@@ -117,16 +144,18 @@ const DoctorsSection: React.FC<DoctorsSectionProps> = ({ onBookAppointment }) =>
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"> */}
+          <Slider {...sliderSettings}>
           {doctors.map((doctor, index) => (
             <motion.div
               key={doctor.name}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-blue-800"
+              className="h-[500px] bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-4 border-blue-800"
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
+              // whileHover={{ y: -8, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)' }}
             >
-              <div className="relative">
+              <div className="relative pt-6 ">
                 <img
                   src={doctor.image}
                   alt={doctor.name}
@@ -138,15 +167,9 @@ const DoctorsSection: React.FC<DoctorsSectionProps> = ({ onBookAppointment }) =>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {doctor.name}
                 </h3>
-                <p className="text-blue-600 font-semibold mb-2">
+                <p className="text-blue-600 font-semibold mb-2 text-center">
                   {doctor.designation}
                 </p>
-                {/* <p className="text-gray-600 mb-4">
-                  {doctor.experience}
-                </p> */}
-                {/* <p className="text-sm text-gray-500 mb-6">
-                  Treated {doctor.patients} patients
-                </p> */}
                 
                 <div className="flex gap-2">
                   <button 
@@ -163,7 +186,9 @@ const DoctorsSection: React.FC<DoctorsSectionProps> = ({ onBookAppointment }) =>
               </div>
             </motion.div>
           ))}
-        </div>
+          </Slider>
+        {/* </div> */}
+        
       </div>
     </section>
   );
