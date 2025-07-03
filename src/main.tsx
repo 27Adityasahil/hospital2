@@ -14,7 +14,7 @@ import Preloader from './components/Preloader.tsx';
 import Gallery from './pages/Gallery.tsx';
 import DepartmentPage from './pages/DepartmentPage.tsx';
 import Anesthesiology from './pages/Department/Anesthesiology.tsx';
-import Cafeteria from './pages/Facilities/Cafeteria.tsx';
+// import Cafeteria from './pages/Facilities/Cafeteria.tsx';
 const router = createBrowserRouter([
   {
     path:"/",
@@ -76,7 +76,7 @@ function AppWithPreloader() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const minLoadTime = 5000; // 2 seconds
+    const minLoadTime = 3000; // 2 seconds
     const timer = setTimeout(() => setLoading(false), minLoadTime);
     return () => clearTimeout(timer);
   }, []);
