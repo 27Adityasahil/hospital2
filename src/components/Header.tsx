@@ -76,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({ onBookAppointment }) => {
     {
       name: "FACILITIES",
       dropdown: facilitiesDropdownItems,
-      path: "/facilities",
+      path: "/ambulanceservice",
     },
     { name: "SERVICES", path: "/services" },
     { name: "DOCTOR'S TEAM", path: "/doctors" },
@@ -99,6 +99,7 @@ const Header: React.FC<HeaderProps> = ({ onBookAppointment }) => {
     "Achievements & Certificate": "/about/achievements",
     "Quality Initiative": "/about/quality-initiative",
     "Milestone": "/about/milestone",
+    "Anesthesiology": "/anesthesiology"
     // Add department specific routes if available, else fallback
   };
 

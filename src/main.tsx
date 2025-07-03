@@ -12,6 +12,8 @@ import AmbulanceService from './pages/Facilities/AmbulanceService.tsx';
 import TPA from './pages/TPA.tsx';
 import Preloader from './components/Preloader.tsx';
 import Gallery from './pages/Gallery.tsx';
+import DepartmentPage from './pages/DepartmentPage.tsx';
+import Anesthesiology from './pages/Department/Anesthesiology.tsx';
 const router = createBrowserRouter([
   {
     path:"/",
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
         path:"gallery",
         element: <Gallery />
       },
+      {
+        path:"department/:name",
+        element:<DepartmentPage />
+      },
+      {
+        path: "anesthesiology",
+        element: <Anesthesiology />
+      }
     ]
   }
 ])
