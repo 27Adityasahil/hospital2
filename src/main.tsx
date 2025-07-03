@@ -40,10 +40,10 @@ const router = createBrowserRouter([
         path:"ambulanceservice",
         element: <AmbulanceService />
       },
-      {
-        path:"cafeteria",
-        element: <Cafeteria />
-      },
+      // {
+      //   path:"cafeteria",
+      //   element: <Cafeteria />
+      // },
       {
         path:"TPA",
         element: <TPA />
