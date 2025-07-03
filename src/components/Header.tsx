@@ -87,7 +87,7 @@ const Header: React.FC<HeaderProps> = ({ onBookAppointment }) => {
   // Map dropdown item text to actual route paths
   const routeMap: Record<string, string> = {
     "Ambulance Services": "/ambulanceservice",
-    "Cafeteria": "/facilities/cafeteria",
+    "Cafeteria": "/cafeteria",
     "Day Care": "/facilities/daycare",
     "Guest House": "/facilities/guesthouse",
     "In Patient Department": "/facilities/inpatient",

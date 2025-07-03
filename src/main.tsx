@@ -14,6 +14,7 @@ import Preloader from './components/Preloader.tsx';
 import Gallery from './pages/Gallery.tsx';
 import DepartmentPage from './pages/DepartmentPage.tsx';
 import Anesthesiology from './pages/Department/Anesthesiology.tsx';
+import Cafeteria from './pages/Facilities/Cafeteria.tsx';
 const router = createBrowserRouter([
   {
     path:"/",
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path:"ambulanceservice",
         element: <AmbulanceService />
+      },
+      {
+        path:"cafeteria",
+        element: <Cafeteria />
       },
       {
         path:"TPA",
