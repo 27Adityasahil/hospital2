@@ -13,7 +13,7 @@ const CommonBanner: React.FC<CommonBannerProps> = ({
   backgroundImage = 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=1200'
 }) => {
   return (
-    <section className="relative h-96 flex items-center justify-center overflow-hidden">
+    <section className="relative h-96 flex items-end justify-center overflow-hidden pb-10">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -23,7 +23,7 @@ const CommonBanner: React.FC<CommonBannerProps> = ({
       </div>
       
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-4">
+      <div className="relative z-10 flex justify-baseline items-center flex-col text-center text-white px-4">
         <motion.h1 
           className="text-5xl font-bold mb-4"
           initial={{ opacity: 0, y: 30 }}
