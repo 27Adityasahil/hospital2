@@ -14,6 +14,8 @@ import Preloader from './components/Preloader.tsx';
 import Gallery from './pages/Gallery.tsx';
 import DepartmentPage from './pages/DepartmentPage.tsx';
 import Anesthesiology from './pages/Department/Anesthesiology.tsx';
+import BlogList from './pages/Blogs.tsx';
+import Blogs from './pages/Blogs.tsx';
 // import Cafeteria from './pages/Facilities/Cafeteria.tsx';
 const router = createBrowserRouter([
   {
@@ -59,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "anesthesiology",
         element: <Anesthesiology />
+      },
+      {
+        path: "blogs",
+        element: <Blogs />
       }
     ]
   }
