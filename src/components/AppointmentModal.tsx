@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import axios from 'axios';
 import {
   X,
   Calendar,
@@ -108,12 +109,36 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   console.log("Appointment booking:", formData);
+  //   alert(
+  //     "Appointment request submitted successfully! We will contact you soon."
+  //   );
+  //   onClose();
+  //   setFormData({
+  //     name: "",
+  //     email: "",
+  //     phone: "",
+  //     gender: "",
+  //     address: "",
+  //     department: "",
+  //     doctor: "",
+  //     date: "",
+  //     time: "",
+  //     message: "",
+  //   });
+  // };
+
+
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    const response = await axios.post("https://appointment-bimal.onrender.com/send-email", formData);
+    // const response = await axios.post("http://localhost:5000/send-email", formData);
     console.log("Appointment booking:", formData);
-    alert(
-      "Appointment request submitted successfully! We will contact you soon."
-    );
+    alert("Appointment request submitted successfully! We will contact you soon.");
     onClose();
     setFormData({
       name: "",
@@ -127,8 +152,11 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
       time: "",
       message: "",
     });
-  };
-
+  } catch (error) {
+    console.error("Error sending email", error);
+    alert("There was an issue submitting your request. Please try again later.");
+  }
+};
   const availableDoctors = formData.department
     ? departmentDoctors[formData.department] || []
     : [];
