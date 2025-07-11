@@ -1,0 +1,19 @@
+.facility-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+@media (max-width:720px){
+    .facility-container{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .hospital-facilities{
+        width: 90vw;
+    }
+    .res-image img{
+        object-fit: contain;
+
+    }
+}

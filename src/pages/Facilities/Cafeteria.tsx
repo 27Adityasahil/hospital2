@@ -1,21 +1,21 @@
 import { motion } from "framer-motion";
 import { Clock, MapPin, Phone, Users, CheckCircle } from "lucide-react";
 import CommonBanner from "../../components/CommonBanner";
-import amb1 from '../../assets/images1/f2.jpg'
-import amb2 from '../../assets/images1/f12.jpg'
+import img1 from '../../assets/images1/f3.jpg'
+import img2 from '../../assets/images1/f13.jpg'
 import FacilitySidebar from "../../components/FacilitySidebar";
 import './Facilities.css'
 const facilityData: Record<string, any> = {
   "Ambulance Services": {
-    title: "Ambulance Services",
+    title: "Cafeteria",
     description:
-      "Our 24/7 ambulance services provide rapid emergency medical transportation with advanced life support equipment and trained paramedics.",
+      "",
     image1:
-      amb2,
+      img2,
     image2:
-      amb1,
+      img1,
     imageDescription:
-      "Dr. Bimal Hospital also provide a 24-hour Ambulance service which can be availed on the following contact numbers:-",
+      "Dr. Bimal hospital also has a well -equipped catering facility for patients, their families, doctors & employees, and also for personal walks. The primary feature of the canteen is to provide anyone who comes in with quality and hygienically protected food.",
     // features: [
     //   "Advanced Life Support (ALS) ambulances",
     //   "Basic Life Support (BLS) ambulances",
@@ -30,13 +30,19 @@ const facilityData: Record<string, any> = {
   },
 };
 
-function AmbulanceService() {
+function Cafeteria() {
   const data = facilityData["Ambulance Services"];
   return (
     <>
-      
+      {/* <CommonBanner
+        title="Facilities"
+        subtitle="Comprehensive healthcare services with expert medical professionals"
+        backgroundImage="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      /> */}
       <section className="facility-container amb-section flex p-4 justify-around"> 
-        
+        {/* <div className="facility-side">
+          <FacilitySidebar />
+        </div> */}
       <motion.div
         // key={facility}
         initial={{ opacity: 0, y: 20 }}
@@ -73,7 +79,7 @@ function AmbulanceService() {
             <p className="text-gray-700 leading-relaxed text-lg">
               {data.imageDescription}
             </p>
-            <h4> <span className="font-bold">Emergency No:</span>  +91 70709 31814</h4>
+            
           </div>
 
           {/* Features and Information Grid */}
@@ -156,4 +162,4 @@ function AmbulanceService() {
   );
 }
 
-export default AmbulanceService;
+export default Cafeteria;

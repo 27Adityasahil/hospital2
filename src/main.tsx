@@ -1,88 +1,206 @@
+// import { Suspense, StrictMode } from 'react';
+// import { useState, useEffect } from 'react';
+// import { createRoot } from 'react-dom/client';
+// import './index.css';
+// import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+// import Layout from './Layout.tsx';
+// import Home from './pages/Home.tsx';
+// import ServicesPage from './components/ServicePage.tsx';
+// import About from './pages/About.tsx';
+// import Doctors from './pages/Doctors.tsx';
+// import AmbulanceService from './pages/Facilities/AmbulanceService.tsx';
+// import TPA from './pages/TPA.tsx';
+// import Preloader from './components/Preloader.tsx';
+// import Gallery from './pages/Gallery.tsx';
+// import DepartmentPage from './pages/DepartmentPage.tsx';
+// import Anesthesiology from './pages/Department/Anesthesiology.tsx';
+// import BlogList from './pages/Blogs.tsx';
+// import Blogs from './pages/Blogs.tsx';
+// import Cafeteria from './pages/Facilities/Cafeteria.tsx';
+// import Daycare from './pages/Facilities/Daycare.tsx';
+// import GuestHouse from './pages/Facilities/GuestHouse.tsx';
+// import InPatient from './pages/Facilities/InPatient.tsx';
+// import OutPatient from './pages/Facilities/OutPatient.tsx';
+// const router = createBrowserRouter([
+//   {
+//     path:"/",
+//     element: <Layout />,
+//     children:[
+//       {
+//         path:"",
+//         element: <Home />
+//       },
+//       {
+//         path:"services",
+//         element: <ServicesPage />
+//       },
+//       {
+//         path:"about",
+//         element: <About />
+//       },
+//       {
+//         path:"doctors",
+//         element: <Doctors />
+//       },
+//       {
+//         path:"ambulance-services",
+//         element: <AmbulanceService />
+//       },
+//       {
+//         path:"cafeteria",
+//         element: <Cafeteria />
+//       },
+//       {
+//         path:"TPA",
+//         element: <TPA />
+//       },
+//       {
+//         path:"gallery",
+//         element: <Gallery />
+//       },
+//       {
+//         path:"department/:name",
+//         element:<DepartmentPage />
+//       },
+//       {
+//         path: "anesthesiology",
+//         element: <Anesthesiology />
+//       },
+//       {
+//         path: "blogs",
+//         element: <Blogs />
+//       },
+//       {
+//         path: "Day-Care",
+//         element: <Daycare />
+//       },
+//       {
+//         path: "guest-house",
+//         element: <GuestHouse />
+//       },
+//       {
+//         path: "in-patient-department",
+//         element: <InPatient />
+//       },
+//       {
+//         path: "outpatient-department-complex",
+//         element: <OutPatient />
+//       },
+//       {
+//         path: "outpatient",
+//         element: <OutPatient />
+//       }
+//     ]
+//   }
+// ])
+
+// // createRoot(document.getElementById('root')!).render(
+// //   <StrictMode>
+// //     <Suspense fallback={<Preloader />}>
+// //       <RouterProvider router={router} />
+// //     </Suspense>
+// //   </StrictMode>
+// // );
+
+// function AppWithPreloader() {
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     const minLoadTime = 3000; // 2 seconds
+//     const timer = setTimeout(() => setLoading(false), minLoadTime);
+//     return () => clearTimeout(timer);
+//   }, []);
+
+//   if (loading) return <Preloader />;
+
+//   return (
+//     <Suspense fallback={<Preloader />}>
+//       <RouterProvider router={router} />
+//     </Suspense>
+//   );
+// }
+
+// createRoot(document.getElementById('root')!).render(
+//   <StrictMode>
+//     <AppWithPreloader />
+//   </StrictMode>
+// );
+
 import { Suspense, StrictMode } from 'react';
 import { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+
+// Layout and Pages
 import Layout from './Layout.tsx';
 import Home from './pages/Home.tsx';
 import ServicesPage from './components/ServicePage.tsx';
 import About from './pages/About.tsx';
 import Doctors from './pages/Doctors.tsx';
-import AmbulanceService from './pages/Facilities/AmbulanceService.tsx';
 import TPA from './pages/TPA.tsx';
-import Preloader from './components/Preloader.tsx';
 import Gallery from './pages/Gallery.tsx';
 import DepartmentPage from './pages/DepartmentPage.tsx';
 import Anesthesiology from './pages/Department/Anesthesiology.tsx';
-import BlogList from './pages/Blogs.tsx';
 import Blogs from './pages/Blogs.tsx';
-// import Cafeteria from './pages/Facilities/Cafeteria.tsx';
+
+// Facilities (individual files)
+import AmbulanceService from './pages/Facilities/AmbulanceService.tsx';
+import Cafeteria from './pages/Facilities/Cafeteria.tsx';
+import Daycare from './pages/Facilities/Daycare.tsx';
+import GuestHouse from './pages/Facilities/GuestHouse.tsx';
+import InPatient from './pages/Facilities/InPatient.tsx';
+import OutPatient from './pages/Facilities/OutPatient.tsx';
+import Pharmacy from './pages/Facilities/Pharmacy.tsx';
+import FacilitiesPage from './pages/FacilitiesPage.tsx'; // Unified page
+
+// Preloader
+import Preloader from './components/Preloader.tsx';
+
+// Router setup
 const router = createBrowserRouter([
   {
-    path:"/",
+    path: "/",
     element: <Layout />,
-    children:[
+    children: [
+      { path: "", element: <Home /> },
+      { path: "services", element: <ServicesPage /> },
+      { path: "about", element: <About /> },
+      { path: "doctors", element: <Doctors /> },
+      { path: "TPA", element: <TPA /> },
+      { path: "gallery", element: <Gallery /> },
+      { path: "department/:name", element: <DepartmentPage /> },
+      { path: "anesthesiology", element: <Anesthesiology /> },
+      { path: "blogs", element: <Blogs /> },
+
+      // Unified facilities route
       {
-        path:"",
-        element: <Home />
+        path: "facilities",
+        children: [
+          { path: "", element: <FacilitiesPage /> },
+          { path: ":facilityName", element: <FacilitiesPage /> },
+        ]
       },
-      {
-        path:"services",
-        element: <ServicesPage />
-      },
-      {
-        path:"about",
-        element: <About />
-      },
-      {
-        path:"doctors",
-        element: <Doctors />
-      },
-      {
-        path:"ambulanceservice",
-        element: <AmbulanceService />
-      },
-      // {
-      //   path:"cafeteria",
-      //   element: <Cafeteria />
-      // },
-      {
-        path:"TPA",
-        element: <TPA />
-      },
-      {
-        path:"gallery",
-        element: <Gallery />
-      },
-      {
-        path:"department/:name",
-        element:<DepartmentPage />
-      },
-      {
-        path: "anesthesiology",
-        element: <Anesthesiology />
-      },
-      {
-        path: "blogs",
-        element: <Blogs />
-      }
+
+      // Optional: legacy or SEO-friendly routes (redirects to unified one)
+      { path: "ambulance-services", element: <Navigate to="/facilities/Ambulance%20Services" /> },
+      { path: "cafeteria", element: <Navigate to="/facilities/Cafeteria" /> },
+      { path: "Day-Care", element: <Navigate to="/facilities/Day%20Care" /> },
+      { path: "guest-house", element: <Navigate to="/facilities/Guest%20House" /> },
+      { path: "in-patient-department", element: <Navigate to="/facilities/In%20Patient%20Department" /> },
+      { path: "outpatient-department-complex", element: <Navigate to="/facilities/Outpatient%20Department%20Complex" /> },
+      // { path: "outpatient", element: <Navigate to="/facilities/Outpatient%20Department%20Complex" /> },
+      { path: "pharmacy", element: <Navigate to="/facilities/pharmacy" /> },
     ]
   }
-])
+]);
 
-// createRoot(document.getElementById('root')!).render(
-//   <StrictMode>
-//     <Suspense fallback={<Preloader />}>
-//       <RouterProvider router={router} />
-//     </Suspense>
-//   </StrictMode>
-// );
-
+// Preloader logic
 function AppWithPreloader() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const minLoadTime = 3000; // 2 seconds
+    const minLoadTime = 3000;
     const timer = setTimeout(() => setLoading(false), minLoadTime);
     return () => clearTimeout(timer);
   }, []);

@@ -1,21 +1,21 @@
 import { motion } from "framer-motion";
 import { Clock, MapPin, Phone, Users, CheckCircle } from "lucide-react";
 import CommonBanner from "../../components/CommonBanner";
-import amb1 from '../../assets/images1/f2.jpg'
-import amb2 from '../../assets/images1/f12.jpg'
+import img1 from '../../assets/images1/f11.jpg'
+import img2 from '../../assets/images1/f7.jpg'
 import FacilitySidebar from "../../components/FacilitySidebar";
 import './Facilities.css'
 const facilityData: Record<string, any> = {
   "Ambulance Services": {
-    title: "Ambulance Services",
+    title: "Pharmacy",
     description:
-      "Our 24/7 ambulance services provide rapid emergency medical transportation with advanced life support equipment and trained paramedics.",
+      "",
     image1:
-      amb2,
+      img2,
     image2:
-      amb1,
+      img1,
     imageDescription:
-      "Dr. Bimal Hospital also provide a 24-hour Ambulance service which can be availed on the following contact numbers:-",
+      "24 Hours Pharmacy",
     // features: [
     //   "Advanced Life Support (ALS) ambulances",
     //   "Basic Life Support (BLS) ambulances",
@@ -30,7 +30,7 @@ const facilityData: Record<string, any> = {
   },
 };
 
-function AmbulanceService() {
+function Pharmacy() {
   const data = facilityData["Ambulance Services"];
   return (
     <>
@@ -73,7 +73,10 @@ function AmbulanceService() {
             <p className="text-gray-700 leading-relaxed text-lg">
               {data.imageDescription}
             </p>
-            <h4> <span className="font-bold">Emergency No:</span>  +91 70709 31814</h4>
+
+            {/* <h4> <span className="font-bold">For medicine order: </span> <a href="tel:+917645928300"></a> +91 7645928300</h4> */}
+            <h4> <span className="font-bold">For medicine order: </span>  <a href="tel:+917645928300">7645928300</a></h4>
+            
           </div>
 
           {/* Features and Information Grid */}
@@ -156,4 +159,4 @@ function AmbulanceService() {
   );
 }
 
-export default AmbulanceService;
+export default Pharmacy;

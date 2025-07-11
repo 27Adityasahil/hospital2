@@ -1,0 +1,87 @@
+import { motion } from "framer-motion";
+import { Clock, MapPin, Phone, Users, CheckCircle } from "lucide-react";
+import CommonBanner from "../../components/CommonBanner";
+import img1 from '../../assets/images1/f4.jpg'
+// import img2 from '../../assets/images1/f13.jpg'
+import FacilitySidebar from "../../components/FacilitySidebar";
+import './Facilities.css'
+const facilityData: Record<string, any> = {
+  "Ambulance Services": {
+    title: "Day Care",
+    description:
+      "",
+    image1:
+      img1,
+    // image2:
+    //   img1,
+    imageDescription:
+      " Patients availing of day care facilities do not have to get admitted in the wards. They can come to the hospital on the day of the therapy / procedure in the morning and can be discharged on the same day.",
+    // features: [
+    //   "Advanced Life Support (ALS) ambulances",
+    //   "Basic Life Support (BLS) ambulances",
+    //   "Neonatal and pediatric transport",
+    //   "Inter-hospital transfers",
+    //   "Emergency response within 15 minutes",
+    //   "GPS tracking and communication systems",
+    // ],
+    // hours: "24/7 Emergency Service",
+    // contact: "+91 70709 31814",
+    // location: "Saguna More, Patna",
+  },
+};
+
+function Daycare() {
+  const data = facilityData["Ambulance Services"];
+  return (
+    <>
+      
+      <section className="facility-container amb-section flex p-4 justify-around"> 
+        
+      <motion.div
+        // key={facility}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-white w-[50vw] rounded-lg shadow-lg overflow-hidden hospital-facilities"
+      >
+        {/* Header */}
+        <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8">
+          <h2 className="text-3xl font-bold mb-2">{data.title}</h2>
+          <p className="text-blue-100 text-lg">{data.description}</p>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          {/* Images Section */}
+          <div className="mb-8">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6"> */}
+              <div className="relative overflow-hidden rounded-lg shadow-md res-image">
+                <img
+                  src={data.image1}
+                  alt={`${data.title} - Image 1`}
+                  className="w-full h-64 object-contain hover:scale-105 transition-transform duration-300 faility-image "
+                />
+              </div>
+              {/* <div className="relative overflow-hidden rounded-lg shadow-md res-image">
+                <img
+                  src={data.image2}
+                  alt={`${data.title} - Image 2`}
+                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div> */}
+            {/* </div> */}
+            <p className="text-gray-700 leading-relaxed text-lg">
+              {data.imageDescription}
+            </p>
+            
+          </div>
+
+          
+        </div>
+      </motion.div>
+      </section>
+    </>
+  );
+}
+
+export default Daycare;

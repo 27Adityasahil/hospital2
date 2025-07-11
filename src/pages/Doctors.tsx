@@ -1,5 +1,5 @@
 import React from "react";
-import "./Dcotors.css";
+import "./Doctors.css";
 import CommonBanner from "../components/CommonBanner";
 import doctorsTeam from '../assets/header15.png'
 import Breadcrumb from "../components/Breadcrumb";
