@@ -229,7 +229,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const importantLinks = ['Home', 'About Us', 'Facilities', 'Services', 'Corporate TPA'];
-  const quickLinks = ['Appointment', 'Doctors', 'Department', 'Contact Us', 'Career'];
+  const quickLinks = ['Appointment', 'Doctors', 'Department', 'Career'];
 
   const linkPaths: Record<string, string> = {
     'Home': '/',
