@@ -17,7 +17,6 @@ import Doctors from "./pages/Doctors.tsx";
 import TPA from "./pages/TPA.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import DepartmentPage from "./pages/DepartmentPage.tsx";
-import Anesthesiology from "./pages/Department/Anesthesiology.tsx";
 import Blogs from "./pages/Blogs.tsx";
 
 // Facilities (individual files)
@@ -29,20 +28,20 @@ import InPatient from "./pages/Facilities/InPatient.tsx";
 import OutPatient from "./pages/Facilities/OutPatient.tsx";
 import Pharmacy from "./pages/Facilities/Pharmacy.tsx";
 import FacilitiesPage from "./pages/FacilitiesPage.tsx"; // Unified page
-// import Anesthesiology from './pages/Department/Anesthesiology.tsx';
-// import Cardiology from './pages/Department/Cardiology.tsx';
-// import ENT from './pages/Department/ENT.tsx';
+import Anesthesiology from './pages/Department/Anesthesiology.tsx';
+import Cardiology from './pages/Department/Cardiology.tsx';
+import ENT from './pages/Department/ENT.tsx';
 import Gastroenterology from "./pages/Department/Gastroenterology.tsx";
-// import GeneralMedicine from './pages/Department/GeneralMedicine.tsx';
-// import GynaecologistObstetrician from './pages/Department/GynaecologistObstetrician.tsx';
-// import LaparoscopicGeneral from './pages/Department/LaparoscopicGeneral.tsx';
-// import Nephrology from './pages/Department/Nephrology.tsx';
-// import Neurology from './pages/Department/Neurology.tsx';
-// import Oncology from './pages/Department/Oncology.tsx';
-// import Paediatric from './pages/Department/Paediatric.tsx';
-// import Physiotherapy from './pages/Department/Physiotherapy.tsx';
-// import Radiology from './pages/Department/Radiology.tsx';
-// import Urology from './pages/Department/Urology.tsx';
+import GeneralMedicine from './pages/Department/GeneralMedicine.tsx';
+import GynaecologistObstetrician from "./pages/Department/GyanaecologistObstetrician.tsx";
+import LaparoscopicGeneral from './pages/Department/LaparoscopicGeneral.tsx';
+import Nephrology from './pages/Department/Nephrology.tsx';
+import Neurology from './pages/Department/Neurology.tsx';
+import Oncology from './pages/Department/Oncology.tsx';
+import Paediatric from './pages/Department/Paediatrics.tsx';
+import Physiotherapy from './pages/Department/Physiotherapy.tsx';
+import Radiology from './pages/Department/Radiology.tsx';
+import Urology from './pages/Department/Urology.tsx';
 
 // Preloader
 import Preloader from "./components/Preloader.tsx";
@@ -98,21 +97,21 @@ const router = createBrowserRouter([
 
       { path: "gastroenterology", element: <Gastroenterology /> },
       { path: "anesthesiology", element: <Anesthesiology /> },
-      // { path: "cardiology", element: <Cardiology /> },
-      // { path: "ent", element: <ENT /> },
-      // { path: "general-medicine", element: <GeneralMedicine /> },
-      // {
-      //   path: "gynaecologist-obstetrician",
-      //   element: <GynaecologistObstetrician />,
-      // },
-      // { path: "laparoscopic-general", element: <LaparoscopicGeneral /> },
-      // { path: "nephrology", element: <Nephrology /> },
-      // { path: "neurology", element: <Neurology /> },
-      // { path: "oncology", element: <Oncology /> },
-      // { path: "paediatric", element: <Paediatric /> },
-      // { path: "physiotherapy", element: <Physiotherapy /> },
-      // { path: "radiology", element: <Radiology /> },
-      // { path: "urology", element: <Urology /> },
+      { path: "cardiology", element: <Cardiology /> },
+      { path: "ent", element: <ENT /> },
+      { path: "general-medicine", element: <GeneralMedicine /> },
+      {
+        path: "gynaecologist-obstetrician",
+        element: <GynaecologistObstetrician />,
+      },
+      { path: "laparoscopic-general", element: <LaparoscopicGeneral /> },
+      { path: "nephrology", element: <Nephrology /> },
+      { path: "neurology", element: <Neurology /> },
+      { path: "oncology", element: <Oncology /> },
+      { path: "paediatric", element: <Paediatric /> },
+      { path: "physiotherapy", element: <Physiotherapy /> },
+      { path: "radiology", element: <Radiology /> },
+      { path: "urology", element: <Urology /> },
     ],
   },
 ]);
