@@ -89,10 +89,23 @@ const Header: React.FC<HeaderProps> = ({ onBookAppointment }) => {
     "Vision & Mission": "/about/vision-mission",
     "Achievements & Certificate": "/about/achievements",
     "Quality Initiative": "/about/quality-initiative",
-    "Milestone": "/about/milestone",
+    Milestone: "/about/milestone",
 
     // Department Page
-    "Anesthesiology": "/anesthesiology",
+    Anesthesiology: "/anesthesiology",
+    Cardiology: "/cardiology",
+    ENT: "/ent",
+    Gastroenterology: "/gastroenterology",
+    "General Medicine": "/general-medicine",
+    "Gynaecologist & Obstetrician": "/gynaecologist-obstetrician",
+    "Laparoscopic & General": "/laparoscopic-general",
+    Nephrology: "/nephrology",
+    Neurology: "/neurology",
+    Oncology: "/oncology",
+    Paediatrics: "/paediatric",
+    Physiotherapy: "/physiotherapy",
+    Radiology: "/radiology",
+    Urology: "/urology",
   };
 
   const handleDropdownItemClick = (
@@ -137,19 +150,44 @@ const Header: React.FC<HeaderProps> = ({ onBookAppointment }) => {
           <div className="flex items-center space-x-4 mt-2 lg:mt-0">
             {/* <span className="cursor-pointer hover:text-blue-300">Contact</span> */}
             <span className="cursor-pointer hover:text-blue-300">Career</span>
-            <Link to="/blogs"><span className="cursor-pointer hover:text-blue-300">Blog</span></Link>
+            <Link to="/blogs">
+              <span className="cursor-pointer hover:text-blue-300">Blog</span>
+            </Link>
             <Link to="/gallery">
-              <span className="cursor-pointer hover:text-blue-300">Gallery</span>
+              <span className="cursor-pointer hover:text-blue-300">
+                Gallery
+              </span>
             </Link>
             <div className="flex space-x-2">
-              <a href="https://www.facebook.com/profile.php?id=100005962939497" target="_blank" rel="noreferrer">
-                <Facebook size={16} className="cursor-pointer hover:text-blue-300" />
+              <a
+                href="https://www.facebook.com/profile.php?id=100005962939497"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Facebook
+                  size={16}
+                  className="cursor-pointer hover:text-blue-300"
+                />
               </a>
-              <a href="https://wa.me/917070931814" target="_blank" rel="noreferrer">
-                <MessageCircle size={16} className="cursor-pointer hover:text-blue-300" />
+              <a
+                href="https://wa.me/917070931814"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <MessageCircle
+                  size={16}
+                  className="cursor-pointer hover:text-blue-300"
+                />
               </a>
-              <a href="https://www.instagram.com/dr.bimalhospital/" target="_blank" rel="noreferrer">
-                <Instagram size={16} className="cursor-pointer hover:text-blue-300" />
+              <a
+                href="https://www.instagram.com/dr.bimalhospital/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Instagram
+                  size={16}
+                  className="cursor-pointer hover:text-blue-300"
+                />
               </a>
             </div>
           </div>
@@ -157,14 +195,20 @@ const Header: React.FC<HeaderProps> = ({ onBookAppointment }) => {
       </div>
 
       {/* Main nav */}
-      <motion.nav className={`transition-all duration-300 ${isScrolled ? "bg-white shadow-lg" : "bg-white/95 backdrop-blur-sm"}`}
+      <motion.nav
+        className={`transition-all duration-300 ${
+          isScrolled ? "bg-white shadow-lg" : "bg-white/95 backdrop-blur-sm"
+        }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate("/")}>
+            <div
+              className="flex items-center space-x-3 cursor-pointer"
+              onClick={() => navigate("/")}
+            >
               <img src={logo} className="h-12 rounded-lg" alt="Logo" />
             </div>
 
@@ -174,13 +218,19 @@ const Header: React.FC<HeaderProps> = ({ onBookAppointment }) => {
                 <div key={item.name} className="relative group">
                   <button
                     className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2"
-                    onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
+                    onMouseEnter={() =>
+                      item.dropdown && setActiveDropdown(item.name)
+                    }
                     onMouseLeave={() => setActiveDropdown(null)}
                     onClick={() => {
                       if (item.path && !item.dropdown) navigate(item.path);
                     }}
                     aria-haspopup={item.dropdown ? "true" : undefined}
-                    aria-expanded={item.dropdown && activeDropdown === item.name ? "true" : "false"}
+                    aria-expanded={
+                      item.dropdown && activeDropdown === item.name
+                        ? "true"
+                        : "false"
+                    }
                   >
                     {item.name}
                     {item.dropdown && (
@@ -205,7 +255,9 @@ const Header: React.FC<HeaderProps> = ({ onBookAppointment }) => {
                             {item.dropdown.map((dropdownItem: string) => (
                               <button
                                 key={`${item.name}-${dropdownItem}`}
-                                onClick={() => handleDropdownItemClick(item, dropdownItem)}
+                                onClick={() =>
+                                  handleDropdownItemClick(item, dropdownItem)
+                                }
                                 className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
                               >
                                 {dropdownItem}

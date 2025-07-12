@@ -1,0 +1,158 @@
+.gastro-page {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #f5f5f5;
+  min-height: 90vh;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tabs button {
+  padding: 0.75rem 1.5rem;
+  background-color: #f4a620;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tabs button.active {
+  background-color: #002366;
+  color: white;
+}
+
+.tab-content {
+  background-color: #ffffff;
+  color: #333;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 2rem;
+}
+
+.tab-content h3,
+.tab-content h4 {
+  color: #002366;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.tab-content p {
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.bullet-list {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.bullet-list li {
+  margin-bottom: 0.5rem;
+  list-style-type: disc;
+  color: #333;
+}
+
+.row.img-part {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.row.img-part img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.row.img-part > div {
+  flex: 1 1 48%;
+}
+
+.doctor-card {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.doctor-profile {
+  background-color: #f8f8f8;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 280px;
+}
+
+.doctor-profile img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.doctor-profile h4 {
+  margin: 0.5rem 0;
+  color: #002366;
+}
+
+.doc-links a {
+  display: inline-block;
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  background-color: #0077cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.doc-links a:hover {
+  background-color: #005fa3;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .row.img-part {
+    flex-direction: column;
+  }
+
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tabs button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .tab-content {
+    padding: 1.5rem;
+  }
+
+  .doctor-profile {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
