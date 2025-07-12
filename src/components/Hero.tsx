@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Heart, Shield, Star } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
 import bannerimg from '../assets/slider2.jpg'
+import './Hero.css'
 
 interface HeroProps {
   onBookAppointment: () => void;
